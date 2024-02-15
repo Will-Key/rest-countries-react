@@ -1,5 +1,7 @@
 type PROPS = {
   placeholder: string
+  value?: string
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
 }
 
 export default function Input(props: PROPS) {
@@ -9,6 +11,8 @@ export default function Input(props: PROPS) {
       type="text"
       name="search"
       placeholder={props.placeholder}
+      onChange={props.onChange}
+      value={props.value}
     />
   )
 }
