@@ -17,15 +17,15 @@ export default function Filter() {
   }
 
   return (
-    <div className="flex justify-between w-full">
-      <div className="w-60">
+    <div className="flex flex-col md:flex-row gap-1 justify-between">
+      <div className="basis-full md:basis-1/4">
         <Input
           placeholder="Search by country..."
           onChange={handleInputChange}
           value={inputValue}
         />
       </div>
-      <div className="w-60">
+      <div className="basis-full md:basis-1/4">
         <Selectbox
           initialOption="Filter by region"
           options={options}
