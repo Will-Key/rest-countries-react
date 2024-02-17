@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import Input from './Input'
+import SearchInput from './SearchInput'
 import Selectbox from './Selectbox'
+import { IoSearchSharp } from 'react-icons/io5'
 
 export default function Filter() {
   const [inputValue, setInputValue] = useState<string>('')
@@ -19,10 +20,11 @@ export default function Filter() {
   return (
     <div className="flex flex-col md:flex-row gap-1 justify-between">
       <div className="basis-full md:basis-1/4">
-        <Input
+        <SearchInput
           placeholder="Search by country..."
           onChange={handleInputChange}
           value={inputValue}
+          icon={<IoSearchSharp className="text-gray-400" />}
         />
       </div>
       <div className="basis-full md:basis-1/4">
