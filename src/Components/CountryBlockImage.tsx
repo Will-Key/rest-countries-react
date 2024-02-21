@@ -9,7 +9,7 @@ export default function CountryBlockImage({ src, alt }: PROPS) {
       <img
         src={src}
         alt={alt}
-        className="object-fit w-full h-full max-w-full opacity-100 transform-none"
+        className="w-full h-full max-w-full opacity-100 transform-none"
       />
     </div>
   )
