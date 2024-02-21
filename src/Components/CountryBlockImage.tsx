@@ -1,10 +1,15 @@
-export default function CountryBlockImage() {
+type PROPS = {
+  src?: string
+  alt?: string
+}
+
+export default function CountryBlockImage({ src, alt }: PROPS) {
   return (
-    <div>
+    <div className="border h-80 max-h-80 border-slate-100">
       <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAACWCAMAAAAfSh8xAAAACVBMVEX3fwD///8AnmBWUWjSAAAAoUlEQVR4nO3PMQEAAAgDoGn/0IZwJzQg6Zme7SkGDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDR8OvdOD1wQ8tBkAAAAASUVORK5CYII="
-        alt=""
-        className="block w-full h-full max-h-80 max-w-full opacity-100 transform-none"
+        src={src}
+        alt={alt}
+        className="object-cover w-full h-full max-w-full opacity-100 transform-none"
       />
     </div>
   )
