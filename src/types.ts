@@ -10,5 +10,8 @@ export type Country = {
   flag: string
   languages: {
     name: string
-  }
+  }[]
+  currencies: {
+    name: string
+  }[]
 }
