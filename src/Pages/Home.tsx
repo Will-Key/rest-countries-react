@@ -1,10 +1,11 @@
 import CountriesList from '../Components/CoutriesList'
 import Filter from '../Components/Filter'
 import { Country } from '../types'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Loading from '../Components/Loading'
 import { Error as ErrorComponent } from '../Components/Error'
 import { apiFetch } from '../utils/api-fetch'
+import { ThemeContext } from '../contexts/ThemeContext'
 
 type Error = {
   message: string
@@ -15,6 +16,9 @@ export default function HomePage() {
   const [countries, setCountries] = useState<Country[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
+  const theme = useContext(ThemeContext)
+  const backgroundColor = theme === 'dark' ? 'bg-slate-800' : 'bg-white'
+  const textColor = theme === 'dark' ? 'text-white' : 'text-black'
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,7 +75,7 @@ export default function HomePage() {
   const showCountriesList = !isLoading && !error
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className={`flex flex-col gap-6 ${backgroundColor} ${textColor}`}>
       <Filter
         onInputChange={handleInputChange}
         onSelectboxChange={handleSelectboxChange}
